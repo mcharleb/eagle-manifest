@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This manifest requires the proprietary files to be located in the following directory
+     relative to the directory containing .repo:
+
+     prebuilt_eagle8074/0.0.1/
+-->
+     
+<manifest>
+    <!-- Remotes -->
+    <remote fetch="https://source.codeaurora.org/" name="caf"/>
+    <remote fetch="git://git.openembedded.org" name="oe"/>
+    <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+    <remote fetch="git://github.com/ATLFlight" name="atlflight"/>
+    <remote fetch="git://github.com/shr-distribution" name="shr"/>
+    <remote fetch="git://github.com/bmwcarit" name="bmwcarit"/>
+    <remote fetch="git://github.com/mcharleb" name="mcharleb"/>
+
+    <default remote="caf" revision="refs/tags/LNX.LER.1.2-14600-8x74.0" sync-j="8"/>
+
+    <!-- Layers -->
+    <project name="poky" remote="yocto" path="poky" revision="refs/tags/morty-16.0.0"/>
+    <project name="meta-smartphone" remote="shr" path="poky/meta-smartphone" revision="morty"/>
+    <project name="meta-openembedded" remote="oe" path="poky/meta-openembedded" revision="morty"/>
+
+    <project name="mcharleb/meta-eagle8074" remote="mcharleb" path="poky/meta-eagle8074" revision="morty"/>
+    <project name="mcharleb/meta-qti" remote="mcharleb" path="poky/meta-qti" revision="morty"/>
+    <project name="meta-ros" path="poky/meta-ros" remote="bmwcarit" revision="master"/>
+    <project name="meta-ros-eagle" remote="atlflight" path="poky/meta-ros-eagle" revision="master"/>
+
+    <!-- CAF Source Code -->
+    <project name="kernel/lk" path="bootable/bootloader/lk"/>
+    <project name="quic/la/kernel/msm" path="linux" revision="LNX.LER.1.0"/>
+    <project name="quic/la/platform/external/libselinux" path="external/libselinux"/>
+    <project name="quic/la/platform/frameworks/native" path="frameworks/native"/>
+    <project name="quic/la/platform/vendor/qcom/copper" path="device/qcom/msm8974"/>
+    <project name="quic/la/device/qcom/common" path="device/qcom/common"/>
+    <project name="quic/la/platform/frameworks/av" path="frameworks/av"/>
+    <project name="quic/la/platform/system/extras" path="system/extras"/>
+
+    <project name="quic/le/platform/external/compat-wireless" path="external/compat-wireless"/>
+    <project name="quic/le/platform/system/core" path="system/core"/>
+    <project name="quic/le/platform/bootable/recovery" path="bootable/recovery"/>
+    <project name="quic/le/platform/build" path="build"/>
+    <project name="quic/le/platform/external/hostap" path="external/hostap"/>
+    <project name="quic/le/platform/hardware/qcom/media" path="hardware/qcom/media"/>
+    <project name="quic/le/platform/hardware/qcom/camera" path="hardware/qcom/camera"/>
+
+    <project name="quic/le/platform/external/safe-iop" path="external/safe-iop"/>
+    <project name="quic/la/platform/system/bluetooth" path="system/bluetooth"/>
+    <project name="quic/la/platform/hardware/qcom/display" path="hardware/qcom/display"/>
+    <project name="quic/le/platform/hardware/libhardware" path="hardware/libhardware"/>
+</manifest>
